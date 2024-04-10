@@ -36,6 +36,20 @@ fun cancelCallNotification(context: Context, callId: String) {
     notificationManager.cancel(callId.hashCode())
 }
 
+fun startOutgoingCall(
+    context: Context,
+    callId: String,
+    callType: Int,
+    callInitiatorId: Int,
+    callInitiatorName: String,
+    callOpponents: ArrayList<Int>,
+    callPhoto: String?,
+    userInfo: String
+) {
+   val notificationManager = NotificationManagerCompat.from(context)
+
+}
+
 fun showCallNotification(
     context: Context, callId: String, callType: Int, callInitiatorId: Int,
     callInitiatorName: String, callOpponents: ArrayList<Int>, callPhoto: String?, userInfo: String

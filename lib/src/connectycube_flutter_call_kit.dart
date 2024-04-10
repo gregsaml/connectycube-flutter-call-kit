@@ -185,6 +185,13 @@ class ConnectycubeFlutterCallKit {
     });
   }
 
+  /// Start an Outgoing call.
+  /// On iOS, using Callkit(create a history into the Phone app).
+  /// On Android, Nothing(only callback event listener).
+  static Future startOutgoingCall(CallEvent callEvent) async {
+    await _methodChannel.invokeMethod("startCall", callEvent.toJson());
+  }
+
   /// Show incoming call notification
   static Future<void> showCallNotification(CallEvent callEvent) async {
     if (!Platform.isAndroid && !Platform.isIOS) return Future.value();
